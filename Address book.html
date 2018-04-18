@@ -1,0 +1,192 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title> Address Book </title>
+</head>
+<style>
+  .heading {
+    color: black;
+    font-family: cursive;
+  }
+
+  .title {
+    border-width: 2px;
+    border-style: dotted;
+    border-color: white;
+    background-color: blueviolet;
+    height: 200px;
+
+  }
+
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .main {
+    height: 600px;
+    background-color: black;
+  }
+
+  .search-bar {
+    height: 30px;
+    width: 300px;
+    background-color: white;
+  }
+
+  .contact-list {
+    height: 450px;
+    background-color: white;
+  }
+
+
+  .add-icon {
+    height: 70px;
+  }
+
+  .tap {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  #quick-form, #view-form, #edit-contact {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #000000a8;
+  }
+
+  .quickaddForm {
+    background: #fefefe;
+    width: 50%;
+    margin: 10% auto;
+  }
+
+  footer {
+    display: block;
+    background-color: azure;
+    height: 200px;
+  }
+</style>
+
+<body>
+  <div class="container" ; style="background-color:black; height:700px;">
+    <div class="title">
+      <h1 class=heading> ADDRESS BOOK</h1>
+      <img src="https://pbs.twimg.com/profile_images/647544968777756672/-Ms_S6bh_400x400.png" alt="Andela" style="width:100px;height:100px;">
+    </div>
+    <div class="main">
+      <center>
+        <div class="search-bar">
+          <input type="search" id="mysearch" placeholder="Search for contacts..">
+          <button onclick="myFunction()">Search</button>
+
+
+        </div>
+
+      </center>
+      <div class="contact-list">
+        <!-- <div class= "entry">
+            <div class= "firstname"><p> Ohiri-Anyanwu </p></div>
+            <div class= "lastname"><p> Amarachi </p></div>
+            <div class= "address"><p> O2 Ibiyemi street Palmgrove </p></div>
+            <div class= "phone"><p> 08131087488 </p></div>
+            <div class= "email"><p> queen_amarachi@yahoo.com </p></div>
+            <div class= "del"><a href= "#"> Delete</a></div>
+          </div> -->
+
+
+      </div>
+      <center>
+        <div class="quickadd">
+          <button id="Quickadd"> + Add</button>
+        </div>
+      </center>
+      <div class="overlay" id="quick-form" style="display: none;">
+        <div class="quickaddForm">
+          <form id="addContact">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" class="formfield" placeholder="Your name.." required="required"></input>
+            <br>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" class="formfield" placeholder="Your last name.." required="required"></input>
+            <br>
+            <label for="address">Adress</label>
+            <textarea name="address" id="address" cols="30" rows="10" class="formField" placeholder="Your address.." required="required"></textarea>
+            <br>
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" class="formField" placeholder="Your phone number.." required="required"></input>
+            <br>
+            <label for="email">Email</label>
+            <input type="text" id="email" class="formField" placeholder="Your E-mail address.." required="required"></input>
+
+            <input type="hidden" id="index" class="formField"></input>
+            <br>
+            <br>
+            <button id="Add"> Save </button>
+            <button type="reset" id="cancel"> Cancel </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="overlay" id="view-contact" style="display: none;">
+        <div class="quickaddForm">
+          <h4>Details</h4>
+          <div id="show-full-details"></div>
+          <button id= "close-view">Close</button>
+        </div>
+      </div>
+
+      <div class="overlay" id="edit-contact" style="display: none;">
+        <div class="quickaddForm">
+          <form id="editContact">
+            <h5>edit contact</h5>
+            <label for="firstname">First Name</label>
+            <input type="text" id="edit-firstname" class="formfield" placeholder="Your name.." required="required"></input>
+            <br>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="edit-lastname" class="formfield" placeholder="Your last name.." required="required"></input>
+            <br>
+            <label for="address">Adress</label>
+            <textarea name="address" id="edit-address" cols="30" rows="10" class="formField" placeholder="Your address.." required="required"></textarea>
+            <br>
+            <label for="phone">Phone Number</label>
+            <input type="text" id="edit-phone" class="formField" placeholder="Your phone number.." required="required"></input>
+            <br>
+            <label for="email">Email</label>
+            <input type="text" id="edit-email" class="formField" placeholder="Your E-mail address.." required="required"></input>
+
+            <input type="hidden" id="edit-index" class="formField"></input>
+            <br>
+            <br>
+            <button id="Add"> Save </button>
+            <button type="reset" id="close-edit"> Cancel </button>
+          </form>
+        </div>
+      </div>
+      <div class="overlay" id="view-contact" style="display: none;">
+        <div class="quickaddForm">
+          <h4>Details</h4>
+          <div id="show-full-details"></div>
+          <button id= "close-view">Close</button>
+        </div>
+      </div>
+
+
+
+    </div>
+    <script src="addressBook.js"></script>
+
+
+</body>
+
+</html>
